@@ -1,0 +1,161 @@
+clear stack;
+
+! Turkish Morphology - xfst script
+! All phonology handled in lexc - this script just loads and tests
+
+read lexc turkish.lexc
+define Turkish
+push Turkish
+
+echo ===== NOUN CASES =====
+apply down araba+Noun+Sg+Nom
+apply down araba+Noun+Sg+Acc
+apply down araba+Noun+Sg+Dat
+apply down araba+Noun+Sg+Loc
+apply down araba+Noun+Sg+Abl
+apply down araba+Noun+Sg+Gen
+apply down araba+Noun+Pl+Nom
+apply down araba+Noun+Pl+Acc
+apply down araba+Noun+Pl+Dat
+apply down araba+Noun+Pl+Loc
+apply down araba+Noun+Pl+Abl
+apply down ev+Noun+Sg+Nom
+apply down ev+Noun+Sg+Acc
+apply down ev+Noun+Sg+Dat
+apply down ev+Noun+Sg+Loc
+apply down ev+Noun+Sg+Abl
+apply down ev+Noun+Sg+Gen
+apply down ev+Noun+Pl+Nom
+apply down ev+Noun+Pl+Acc
+apply down ev+Noun+Pl+Dat
+apply down çocuk+Noun+Sg+Nom
+apply down çocuk+Noun+Sg+Acc
+apply down çocuk+Noun+Sg+Dat
+apply down çocuk+Noun+Sg+Loc
+apply down çocuk+Noun+Sg+Abl
+apply down çocuk+Noun+Pl+Nom
+apply down kitap+Noun+Sg+Nom
+apply down kitap+Noun+Sg+Acc
+apply down kitap+Noun+Sg+Dat
+apply down kitap+Noun+Pl+Nom
+apply down ağaç+Noun+Sg+Nom
+apply down ağaç+Noun+Sg+Acc
+apply down ağaç+Noun+Sg+Dat
+apply down ağaç+Noun+Pl+Nom
+apply down gün+Noun+Sg+Nom
+apply down gün+Noun+Sg+Acc
+apply down gün+Noun+Sg+Dat
+apply down gün+Noun+Sg+Loc
+apply down gün+Noun+Sg+Abl
+apply down gün+Noun+Sg+Gen
+apply down gün+Noun+Pl+Nom
+apply down gün+Noun+Pl+Acc
+apply down köy+Noun+Sg+Nom
+apply down köy+Noun+Sg+Acc
+apply down köy+Noun+Sg+Dat
+apply down köy+Noun+Pl+Nom
+echo ===== POSSESSIVES =====
+apply down araba+Noun+Sg+Nom+P1sg
+apply down araba+Noun+Sg+Nom+P2sg
+apply down araba+Noun+Sg+Nom+P3sg
+apply down araba+Noun+Sg+Nom+P1pl
+apply down araba+Noun+Sg+Nom+P2pl
+apply down araba+Noun+Sg+Nom+P3pl
+apply down ev+Noun+Sg+Nom+P1sg
+apply down ev+Noun+Sg+Nom+P2sg
+apply down ev+Noun+Sg+Nom+P3sg
+apply down ev+Noun+Sg+Nom+P1pl
+apply down ev+Noun+Sg+Nom+P2pl
+apply down ev+Noun+Sg+Nom+P3pl
+apply down gün+Noun+Sg+Nom+P1sg
+apply down gün+Noun+Sg+Nom+P3sg
+apply down gün+Noun+Sg+Nom+P1pl
+echo ===== NOMINAL COPULA =====
+apply down araba+Noun+Sg+Nom+CopPres+1sg
+apply down araba+Noun+Sg+Nom+CopPres+2sg
+apply down araba+Noun+Sg+Nom+CopPres+3sg
+apply down araba+Noun+Sg+Nom+CopPast+1sg
+apply down araba+Noun+Sg+Nom+CopPast+3sg
+apply down ev+Noun+Sg+Nom+CopPres+1sg
+apply down ev+Noun+Sg+Nom+CopPres+3sg
+apply down ev+Noun+Sg+Nom+CopPast+1sg
+echo ===== PRESENT PROGRESSIVE =====
+apply down gel+Verb+Pres+1sg
+apply down gel+Verb+Pres+2sg
+apply down gel+Verb+Pres+3sg
+apply down gel+Verb+Pres+1pl
+apply down gel+Verb+Pres+2pl
+apply down gel+Verb+Pres+3pl
+apply down yap+Verb+Pres+1sg
+apply down yap+Verb+Pres+3sg
+apply down yap+Verb+Pres+3pl
+apply down oku+Verb+Pres+1sg
+apply down oku+Verb+Pres+3sg
+apply down gör+Verb+Pres+1sg
+apply down gör+Verb+Pres+3sg
+echo ===== SIMPLE PAST =====
+apply down gel+Verb+Past+1sg
+apply down gel+Verb+Past+2sg
+apply down gel+Verb+Past+3sg
+apply down gel+Verb+Past+1pl
+apply down gel+Verb+Past+3pl
+apply down yap+Verb+Past+1sg
+apply down yap+Verb+Past+3sg
+apply down git+Verb+Past+1sg
+apply down git+Verb+Past+3sg
+echo ===== FUTURE =====
+apply down gel+Verb+Fut+1sg
+apply down gel+Verb+Fut+3sg
+apply down gel+Verb+Fut+3pl
+apply down yap+Verb+Fut+1sg
+apply down yap+Verb+Fut+3sg
+echo ===== EVIDENTIAL PAST =====
+apply down gel+Verb+Past+Evid+3sg
+apply down yap+Verb+Past+Evid+3sg
+echo ===== CONDITIONAL =====
+apply down gel+Verb+Cond+1sg
+apply down gel+Verb+Cond+3sg
+apply down yap+Verb+Cond+1sg
+echo ===== NECESSITATIVE =====
+apply down gel+Verb+Nec+1sg
+apply down gel+Verb+Nec+3sg
+apply down yap+Verb+Nec+1sg
+echo ===== AORIST =====
+apply down gel+Verb+Aor+3sg
+apply down gel+Verb+Aor+1sg
+apply down yap+Verb+Aor+3sg
+apply down yap+Verb+Aor+1sg
+apply down oku+Verb+Aor+3sg
+apply down al+Verb+Aor+3sg
+apply down bil+Verb+Aor+3sg
+echo ===== INFINITIVE AND VERBAL NOUN =====
+apply down gel+Verb+Inf
+apply down yap+Verb+Inf
+apply down oku+Verb+Inf
+apply down gel+Verb+VN
+apply down yap+Verb+VN
+echo ===== IMPERATIVE =====
+apply down gel+Verb+Imp+2sg
+apply down gel+Verb+Imp+2pl
+apply down gel+Verb+Imp+3sg
+apply down yap+Verb+Imp+2sg
+apply down yap+Verb+Imp+3sg
+echo ===== NEGATION =====
+apply down gel+Verb+Neg+Pres+1sg
+apply down gel+Verb+Neg+Pres+3sg
+apply down yap+Verb+Neg+Pres+1sg
+apply down yap+Verb+Neg+Pres+3sg
+apply down gel+Verb+Neg+Past+1sg
+apply down gel+Verb+Neg+Past+3sg
+echo ===== PASSIVE AND CAUSATIVE =====
+apply down yap+Verb+Pass+Pres+3sg
+apply down yap+Verb+Caus+Pres+3sg
+echo ===== ADJECTIVE PREDICATES =====
+apply down güzel+Adj+CopPres+1sg
+apply down güzel+Adj+CopPres+3sg
+apply down güzel+Adj+CopPast+3sg
+apply down büyük+Adj+CopPres+3sg
+
+echo WRITE OUTPUT FILE
+apply down < turkish_upper.txt > turkish_output.txt
+echo ALL TESTS COMPLETE

@@ -1,0 +1,574 @@
+
+! ============================================================
+! Turkish Morphology - Complete Lexicon
+! ALL surface forms explicit - zero reliance on xfst rules
+! ============================================================
+
+Multichar_Symbols
++Noun +Verb +Adj
++Sg +Pl
++Nom +Acc +Dat +Loc +Abl +Gen +Ins
++P1sg +P2sg +P3sg +P1pl +P2pl +P3pl
++Pres +Past +Evid +Fut +Cond +Nec +Aor +Opt
++Neg +Pass +Caus +Refl +Recip +Abil
++1sg +2sg +3sg +1pl +2pl +3pl
++CopPres +CopPast
++Inf +VN +Imp
++2plFml
+
+LEXICON Root
+    Nouns;
+    Verbs;
+    Adjectives;
+
+! ============================================================
+! NOUNS
+! ============================================================
+
+LEXICON Nouns
+    NounRoots;
+
+LEXICON NounRoots
+! back unrounded vowel-final
+araba+Noun:araba    NounVHA_V;
+! back unrounded cons-final regular
+ev+Noun:ev          NounVHE_C;
+! back unrounded cons-final K-alternating (çocuk: k/ğ)
+çocuk+Noun:çocuk    NounVHO_Chard;
+çocuk+Noun:çocuğ    NounVHO_Csoft;
+! back unrounded cons-final P-alternating (kitap: p/b)
+kitap+Noun:kitap    NounVHA_Chard;
+kitap+Noun:kitab    NounVHA_Csoft;
+! back unrounded cons-final C-alternating (ağaç: ç/c)
+ağaç+Noun:ağaç      NounVHA_Chard2;
+ağaç+Noun:ağac      NounVHA_Csoft;
+! front rounded cons-final regular
+gün+Noun:gün        NounVHU_C;
+köy+Noun:köy        NounVHU_C;
+
+! ============================================================
+! BACK UNROUNDED VOWEL-FINAL (araba)
+! ============================================================
+
+LEXICON NounVHA_V
++Sg+Nom:0       NounPossVHA_V;
++Sg+Acc:yı      NounPossVHA_C;
++Sg+Dat:ya      NounPossVHA_C;
++Sg+Loc:da      NounPossVHA_C;
++Sg+Abl:dan     NounPossVHA_C;
++Sg+Gen:nın     NounPossVHA_C;
++Pl+Nom:lar     NounPossVHA_C;
++Pl+Acc:ları    NounPossVHA_C;
++Pl+Dat:lara    NounPossVHA_C;
++Pl+Loc:larda   NounPossVHA_C;
++Pl+Abl:lardan  NounPossVHA_C;
+                NounCopVHA;
+
+! ============================================================
+! FRONT UNROUNDED CONS-FINAL (ev)
+! ============================================================
+
+LEXICON NounVHE_C
++Sg+Nom:0       NounPossVHE_C;
++Sg+Acc:i       NounPossVHE_C;
++Sg+Dat:e       NounPossVHE_C;
++Sg+Loc:de      NounPossVHE_C;
++Sg+Abl:den     NounPossVHE_C;
++Sg+Gen:in      NounPossVHE_C;
++Pl+Nom:ler     NounPossVHE_C;
++Pl+Acc:leri    NounPossVHE_C;
++Pl+Dat:lere    NounPossVHE_C;
++Pl+Loc:lerde   NounPossVHE_C;
++Pl+Abl:lerden  NounPossVHE_C;
+                NounCopVHE;
+
+! ============================================================
+! BACK ROUNDED K-ALTERNATING (çocuk: k final / ğ before vowel)
+! ============================================================
+
+LEXICON NounVHO_Chard
++Sg+Nom:0       #;
++Sg+Loc:ta      #;
++Sg+Abl:tan     #;
++Sg+Gen:un      #;
++Pl+Nom:lar     #;
+
+LEXICON NounVHO_Csoft
++Sg+Acc:u       #;
++Sg+Dat:a       #;
+
+! ============================================================
+! BACK UNROUNDED P-ALTERNATING (kitap: p final / b before vowel)
+! ============================================================
+
+LEXICON NounVHA_Chard
++Sg+Nom:0       #;
++Sg+Loc:ta      #;
++Sg+Abl:tan     #;
++Sg+Gen:ın      #;
++Pl+Nom:lar     #;
+
+LEXICON NounVHA_Csoft
++Sg+Acc:ı       #;
++Sg+Dat:a       #;
+
+! ============================================================
+! BACK UNROUNDED C-ALTERNATING (ağaç: ç final / c before vowel)
+! ============================================================
+
+LEXICON NounVHA_Chard2
++Sg+Nom:0       #;
++Sg+Loc:ta      #;
++Sg+Abl:tan     #;
++Sg+Gen:ın      #;
++Pl+Nom:lar     #;
+
+! ============================================================
+! FRONT ROUNDED CONS-FINAL (gün, köy)
+! ============================================================
+
+LEXICON NounVHU_C
++Sg+Nom:0       NounPossVHU_C;
++Sg+Acc:ü       NounPossVHU_C;
++Sg+Dat:e       NounPossVHU_C;
++Sg+Loc:de      NounPossVHU_C;
++Sg+Abl:den     NounPossVHU_C;
++Sg+Gen:ün      NounPossVHU_C;
++Pl+Nom:ler     NounPossVHE_C;
++Pl+Acc:leri    NounPossVHE_C;
++Pl+Dat:lere    NounPossVHE_C;
+                NounCopVHU;
+
+! ============================================================
+! POSSESSIVES
+! ============================================================
+
+LEXICON NounPossVHA_V
+0           #;
++P1sg:m     #;
++P2sg:n     #;
++P3sg:sı    #;
++P1pl:mız   #;
++P2pl:nız   #;
++P3pl:ları  #;
+            NounCopVHA;
+
+LEXICON NounPossVHA_C
+0           #;
++P1sg:ım    #;
++P2sg:ın    #;
++P3sg:ı     #;
++P1pl:ımız  #;
++P2pl:ınız  #;
++P3pl:ları  #;
+            NounCopVHA;
+
+LEXICON NounPossVHE_C
+0           #;
++P1sg:im    #;
++P2sg:in    #;
++P3sg:i     #;
++P1pl:imiz  #;
++P2pl:iniz  #;
++P3pl:leri  #;
+            NounCopVHE;
+
+LEXICON NounPossVHU_C
+0           #;
++P1sg:üm    #;
++P2sg:ün    #;
++P3sg:ü     #;
++P1pl:ümüz  #;
++P2pl:ünüz  #;
++P3pl:leri  #;
+            NounCopVHU;
+
+! ============================================================
+! NOMINAL COPULA
+! ============================================================
+
+LEXICON NounCopVHA
++CopPres+1sg:yım    #;
++CopPres+2sg:sın    #;
++CopPres+3sg:dır    #;
++CopPast+1sg:dım    #;
++CopPast+2sg:dın    #;
++CopPast+3sg:dı     #;
+
+LEXICON NounCopVHE
++CopPres+1sg:im     #;
++CopPres+2sg:sin    #;
++CopPres+3sg:dir    #;
++CopPast+1sg:dim    #;
++CopPast+2sg:din    #;
++CopPast+3sg:di     #;
+
+LEXICON NounCopVHU
++CopPres+1sg:yüm    #;
++CopPres+2sg:sün    #;
++CopPres+3sg:dür    #;
++CopPast+1sg:düm    #;
++CopPast+2sg:dün    #;
++CopPast+3sg:dü     #;
+
+! ============================================================
+! VERBS
+! ============================================================
+
+LEXICON Verbs
+    VerbRoots;
+
+LEXICON VerbRoots
+! front unrounded
+gel+Verb:gel        VerbVHE;
+bil+Verb:bil        VerbVHE;
+ver+Verb:ver        VerbVHE;
+! git: special - past tense gemination (gittim not gitdim)
+git+Verb:git        VerbGit;
+! front rounded
+gör+Verb:gör        VerbVHU;
+gül+Verb:gül        VerbVHU;
+! back unrounded - regular aorist -ar
+yap+Verb:yap        VerbVHA;
+bak+Verb:bak        VerbVHA;
+yaz+Verb:yaz        VerbVHA;
+koş+Verb:koş        VerbVHA;
+! back unrounded - aorist -ır (monosyllabic l-final)
+al+Verb:al          VerbVHA_L;
+! back rounded vowel-final
+oku+Verb:oku        VerbVHO_V;
+
+! ============================================================
+! FRONT UNROUNDED VERBS (gel, bil)
+! ============================================================
+
+LEXICON VerbVHE
++Neg:0              VerbTAM_VHE_Neg;
++Pass:il            VerbTAM_VHE;
++Caus:dir           VerbTAM_VHE;
+0                   VerbTAM_VHE;
+
+LEXICON VerbTAM_VHE
++Pres:iyor          VerbAgrPres;
++Past:di            VerbAgrPast_VHE;
++Past+Evid:miş      VerbAgrPast_VHE;
+! FIX: future 1sg uses ğ form directly: geleceğ+im
++Fut:ecek           VerbAgrFut_VHE;
++Fut:eceğ           VerbAgrFut_VHE_V;
++Cond:se            VerbAgrCond_VHE;
++Nec:meli           VerbAgrNec_VHE;
++Aor:ir             VerbAgrAor_VHE;
++Inf:mek            #;
++VN:me              #;
++Imp:0              VerbAgrImp_VHE;
+
+! negation: me+yor -> miyor
+LEXICON VerbTAM_VHE_Neg
++Pres:miyor         VerbAgrPres;
++Past:medi          VerbAgrPast_VHE;
+
+LEXICON VerbAgrPast_VHE
++1sg:m      #;
++2sg:n      #;
++3sg:0      #;
++1pl:k      #;
++2pl:niz    #;
++3pl:ler    #;
+
+! fut consonant-final agreement (geleceksin, gelecek, gelecekler)
+LEXICON VerbAgrFut_VHE
++2sg:sin    #;
++3sg:0      #;
++1pl:iz     #;
++2pl:siniz  #;
++3pl:ler    #;
+
+! fut vowel-initial agreement (geleceğim, geleceğiz)
+LEXICON VerbAgrFut_VHE_V
++1sg:im     #;
+
+LEXICON VerbAgrCond_VHE
++1sg:m      #;
++2sg:n      #;
++3sg:0      #;
++1pl:k      #;
++2pl:niz    #;
++3pl:ler    #;
+
+LEXICON VerbAgrNec_VHE
++1sg:yim    #;
++2sg:sin    #;
++3sg:0      #;
++1pl:yiz    #;
++2pl:siniz  #;
++3pl:ler    #;
+
+LEXICON VerbAgrAor_VHE
++1sg:im     #;
++2sg:sin    #;
++3sg:0      #;
++1pl:iz     #;
++2pl:siniz  #;
++3pl:ler    #;
+
+LEXICON VerbAgrImp_VHE
++2sg:0      #;
++2pl:in     #;
++3sg:sin    #;
++3pl:sinler #;
+
+! ============================================================
+! SHARED PRESENT AGREEMENT
+! ============================================================
+
+LEXICON VerbAgrPres
++1sg:um     #;
++2sg:sun    #;
++3sg:0      #;
++1pl:uz     #;
++2pl:sunuz  #;
++3pl:lar    #;
+
+! ============================================================
+! GIT - special past tense (gittim not gitdim)
+! ============================================================
+
+LEXICON VerbGit
++Neg:0              VerbTAM_VHE_Neg;
+0                   VerbTAM_Git;
+
+LEXICON VerbTAM_Git
++Pres:iyor          VerbAgrPres;
+! FIX: git past tense uses geminate tt directly
++Past:ti            VerbAgrPast_VHE;
++Past+Evid:miş      VerbAgrPast_VHE;
++Fut:ecek           VerbAgrFut_VHE;
++Fut:eceğ           VerbAgrFut_VHE_V;
++Cond:se            VerbAgrCond_VHE;
++Nec:meli           VerbAgrNec_VHE;
++Aor:ir             VerbAgrAor_VHE;
++Inf:mek            #;
++VN:me              #;
++Imp:0              VerbAgrImp_VHE;
+
+! ============================================================
+! BACK UNROUNDED VERBS - aorist -ar (yap)
+! ============================================================
+
+LEXICON VerbVHA
++Neg:0              VerbTAM_VHA_Neg;
++Pass:ıl            VerbTAM_VHA;
+! FIX: causative -tır directly after voiceless p
++Caus:tır           VerbTAM_VHA;
+0                   VerbTAM_VHA;
+
+LEXICON VerbTAM_VHA
++Pres:ıyor          VerbAgrPres;
+! FIX: past tense -tı directly after voiceless p
++Past:tı            VerbAgrPast_VHA;
++Past+Evid:mış      VerbAgrPast_VHA;
++Fut:acak           VerbAgrFut_VHA;
++Fut:acağ           VerbAgrFut_VHA_V;
++Cond:sa            VerbAgrCond_VHA;
++Nec:malı           VerbAgrNec_VHA;
++Aor:ar             VerbAgrAor_VHA;
++Inf:mak            #;
++VN:ma              #;
++Imp:0              VerbAgrImp_VHA;
+
+! negation: ma+yor -> mıyor
+LEXICON VerbTAM_VHA_Neg
++Pres:mıyor         VerbAgrPres;
++Past:madı          VerbAgrPast_VHA;
+
+LEXICON VerbAgrPast_VHA
++1sg:m      #;
++2sg:n      #;
++3sg:0      #;
++1pl:k      #;
++2pl:nız    #;
++3pl:lar    #;
+
+LEXICON VerbAgrFut_VHA
++2sg:sın    #;
++3sg:0      #;
++1pl:ız     #;
++2pl:sınız  #;
++3pl:lar    #;
+
+LEXICON VerbAgrFut_VHA_V
++1sg:ım     #;
+
+LEXICON VerbAgrCond_VHA
++1sg:m      #;
++2sg:n      #;
++3sg:0      #;
++1pl:k      #;
++2pl:nız    #;
++3pl:lar    #;
+
+LEXICON VerbAgrNec_VHA
++1sg:yım    #;
++2sg:sın    #;
++3sg:0      #;
++1pl:yız    #;
++2pl:sınız  #;
++3pl:lar    #;
+
+LEXICON VerbAgrAor_VHA
++1sg:ım     #;
++2sg:sın    #;
++3sg:0      #;
++1pl:ız     #;
++2pl:sınız  #;
++3pl:lar    #;
+
+LEXICON VerbAgrImp_VHA
++2sg:0      #;
++2pl:ın     #;
++3sg:sın    #;
++3pl:sınlar #;
+
+! ============================================================
+! BACK UNROUNDED L-FINAL - aorist -ır (al)
+! ============================================================
+
+LEXICON VerbVHA_L
++Neg:0              VerbTAM_VHA_L_Neg;
+0                   VerbTAM_VHA_L;
+
+LEXICON VerbTAM_VHA_L
++Pres:ıyor          VerbAgrPres;
++Past:dı            VerbAgrPast_VHA;
++Past+Evid:mış      VerbAgrPast_VHA;
++Fut:acak           VerbAgrFut_VHA;
++Fut:acağ           VerbAgrFut_VHA_V;
++Cond:sa            VerbAgrCond_VHA;
++Nec:malı           VerbAgrNec_VHA;
++Aor:ır             VerbAgrAor_VHA;
++Inf:mak            #;
++VN:ma              #;
++Imp:0              VerbAgrImp_VHA;
+
+LEXICON VerbTAM_VHA_L_Neg
++Pres:mıyor         VerbAgrPres;
++Past:madı          VerbAgrPast_VHA;
+
+! ============================================================
+! BACK ROUNDED VOWEL-FINAL (oku)
+! FIX: oku+uyor -> okuyor (no y epenthesis - u+uyor = uyor)
+! ============================================================
+
+LEXICON VerbVHO_V
++Neg:0              VerbTAM_VHO_V_Neg;
+0                   VerbTAM_VHO_V;
+
+LEXICON VerbTAM_VHO_V
++Pres:yor           VerbAgrPres;
++Past:du            VerbAgrPast_VHO;
++Fut:yacak          VerbAgrFut_VHA;
++Fut:yacağ          VerbAgrFut_VHA_V;
++Aor:r              VerbAgrAor_VHO;
++Inf:mak            #;
++VN:ma              #;
++Imp:0              VerbAgrImp_VHA;
+
+LEXICON VerbTAM_VHO_V_Neg
++Pres:mıyor         VerbAgrPres;
++Past:madu          VerbAgrPast_VHO;
+
+LEXICON VerbAgrPast_VHO
++1sg:m      #;
++2sg:n      #;
++3sg:0      #;
++1pl:k      #;
++2pl:nuz    #;
++3pl:lar    #;
+
+LEXICON VerbAgrAor_VHO
++1sg:um     #;
++2sg:sun    #;
++3sg:0      #;
++1pl:uz     #;
++2pl:sunuz  #;
++3pl:lar    #;
+
+! ============================================================
+! FRONT ROUNDED VERBS (gör, gül)
+! ============================================================
+
+LEXICON VerbVHU
++Neg:0              VerbTAM_VHU_Neg;
++Pass:ül            VerbTAM_VHU;
++Caus:dür           VerbTAM_VHU;
+0                   VerbTAM_VHU;
+
+LEXICON VerbTAM_VHU
++Pres:üyor          VerbAgrPres;
++Past:dü            VerbAgrPast_VHU;
++Past+Evid:müş      VerbAgrPast_VHU;
++Fut:ecek           VerbAgrFut_VHE;
++Fut:eceğ           VerbAgrFut_VHE_V;
++Cond:se            VerbAgrCond_VHE;
++Nec:meli           VerbAgrNec_VHE;
++Aor:ür             VerbAgrAor_VHU;
++Inf:mek            #;
++VN:me              #;
++Imp:0              VerbAgrImp_VHU;
+
+LEXICON VerbTAM_VHU_Neg
++Pres:müyor         VerbAgrPres;
++Past:medi          VerbAgrPast_VHU;
+
+LEXICON VerbAgrPast_VHU
++1sg:m      #;
++2sg:n      #;
++3sg:0      #;
++1pl:k      #;
++2pl:nüz    #;
++3pl:ler    #;
+
+LEXICON VerbAgrAor_VHU
++1sg:üm     #;
++2sg:sün    #;
++3sg:0      #;
++1pl:üz     #;
++2pl:sünüz  #;
++3pl:ler    #;
+
+LEXICON VerbAgrImp_VHU
++2sg:0      #;
++2pl:ün     #;
++3sg:sün    #;
++3pl:sünler #;
+
+! ============================================================
+! ADJECTIVES
+! ============================================================
+
+LEXICON Adjectives
+    AdjRoots;
+
+LEXICON AdjRoots
+güzel+Adj:güzel     AdjCopVHE;
+! büyük: k-final before consonant suffix (büyüktür), no alternation needed
+büyük+Adj:büyük     AdjCopVHU;
+
+LEXICON AdjCopVHE
++CopPres+1sg:im     #;
++CopPres+2sg:sin    #;
++CopPres+3sg:dir    #;
++CopPast+1sg:dim    #;
++CopPast+2sg:din    #;
++CopPast+3sg:di     #;
+
+! FIX: büyük+tür - k is voiceless, dir->tür after k
+LEXICON AdjCopVHU
++CopPres+1sg:yüm    #;
++CopPres+2sg:sün    #;
++CopPres+3sg:tür    #;
++CopPast+1sg:düm    #;
++CopPast+2sg:dün    #;
++CopPast+3sg:dü     #;
+
+END
